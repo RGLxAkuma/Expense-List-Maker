@@ -5,6 +5,11 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
 
+  const deleteItemHander = ()=>{
+    // console.log(props.itemId);
+    props.onDeleteItem(props.itemId);
+  }
+
   return (
     <li>
       <Card className="expense-item">
@@ -12,6 +17,7 @@ const ExpenseItem = (props) => {
         <div className="expense-item__description">
           <h2>{props.title}</h2>
           <div className="expense-item__price">${props.amount}</div>
+          <button onClick={deleteItemHander}>Remove</button>
         </div>
       </Card>
     </li>
